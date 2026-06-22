@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+.table-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    overflow: hidden; /* Để bo góc bảng */
+}
+
+/* Chỉnh header của bảng */
+.custom-table thead th {
+    background-color: #f8f9fa;
+    color: #495057;
+    font-weight: 600;
+    font-size: 13px;
+    border-bottom: 2px solid #e9ecef;
+    padding: 15px 20px;
+}
+
+/* Chỉnh các dòng dữ liệu */
+.custom-table tbody td {
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+    padding: 15px 20px;
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+/* Hình ảnh sân bóng nhỏ */
+.field-img {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Trạng thái (Status) */
+.status-text {
+    font-weight: 500;
+    font-size: 13px;
+}
+.status-active { color: #28a745; } /* Màu xanh lá */
+.status-maintenance { color: #dc3545; } /* Màu đỏ */
+
+/* Các nút hành động (Action Buttons) */
+.action-btn {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    color: #6c757d;
+    background: white;
+    margin-right: 5px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+.action-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}

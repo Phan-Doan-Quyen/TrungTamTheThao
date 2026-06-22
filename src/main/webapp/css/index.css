@@ -1,0 +1,366 @@
+@charset "UTF-8";
+
+:root {
+    --primary-color: #006a4e; 
+    --light-gray: #eaeff4;
+    --text-gray: #6c757d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-gray) !important;
+    overflow-x: hidden;
+}
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: white;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-section {
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-text {
+    color: var(--primary-color);
+    font-weight: 900;
+    font-size: 24px;
+    font-style: italic;
+    text-decoration: none;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    color: var(--text-gray);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    border-left: 4px solid transparent;
+    margin: 12px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.sidebar-menu li a i {
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-menu li a:hover, 
+.sidebar-menu li a.active {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 106, 78, 0.2);
+}
+
+.main-wrapper {
+    margin-left: 260px; 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 70px;
+}
+
+.top-navbar {
+    height: 70px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 260px; 
+    z-index: 1000;
+}
+
+.search-box {
+    position: relative;
+    width: 400px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px 40px 8px 20px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.badge-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    font-size: 10px;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+}
+
+.content-body {
+    padding: 30px;
+}
+
+.sidebar, .main-wrapper {
+    transition: all 0.3s ease-in-out;
+}
+
+body.sidebar-closed .sidebar {
+    left: -260px;
+}
+
+body.sidebar-closed .main-wrapper {
+    margin-left: 0;
+}
+
+.card-custom {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background-color: white;
+    border-bottom: 2px solid var(--primary-color);
+    padding: 15px 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.page-header {
+    border-bottom: 2px solid var(--light-gray);
+    margin-bottom: 20px;
+}
+
+.page-tab {
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--primary-color);
+    font-weight: bold;
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: -2px; 
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 106, 78, 0.25);
+}
+
+.btn-primary-custom {
+    background-color: var(--primary-color) !important; /* Dùng !important để ép nhận màu xanh #006a4e */
+    color: white !important;
+    border: 1px solid var(--primary-color) !important;
+    border-radius: 6px;       /* Bo góc nhẹ giống mẫu */
+    padding: 8px 15px;        /* Độ dày nút */
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+/* Hiệu ứng khi di chuột vào */
+.btn-primary-custom:hover {
+    background-color: #004d38 !important; /* Màu xanh đậm hơn khi hover */
+    border-color: #004d38 !important;
+    transform: translateY(-1px);          /* Nút nẩy lên nhẹ */
+    box-shadow: 0 4px 6px rgba(0, 106, 78, 0.2);
+}
+
+.content-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 25px;
+    min-height: 80vh;
+    border: none;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;       /* Bo góc nhẹ */
+    margin: 0 3px;            /* Khoảng cách giữa 2 nút */
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-list {
+    background-color: white !important; /* Màu vàng */
+    color: #006a4e !important;           
+}
+.btn-list:hover {
+    background-color: white !important; /* Vàng đậm khi di chuột */
+    transform: scale(1.1);                /* Phóng to nhẹ */
+}
+
+.btn-add {
+    background-color: white !important; /* Màu vàng */
+    color: #006a4e !important;           
+}
+.btn-add:hover {
+    background-color: white !important; /* Vàng đậm khi di chuột */
+    transform: scale(1.1);                /* Phóng to nhẹ */
+}
+
+/* Nút Sửa - Màu vàng cam */
+.btn-edit {
+    background-color: white !important; /* Màu vàng */
+    color: blue !important;           
+}
+.btn-edit:hover {
+    background-color: white !important; /* Vàng đậm khi di chuột */
+    transform: scale(1.1);                /* Phóng to nhẹ */
+}
+
+/* Nút Xóa - Màu đỏ */
+.btn-delete {
+    background-color: white !important; /* Màu đỏ */
+    color: red !important;              /* Chữ trắng */
+}
+.btn-delete:hover {
+    background-color: white !important; /* Đỏ đậm khi di chuột */
+    transform: scale(1.1);
+}
+
+.user-profile {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.user-profile:hover {
+    background-color: rgba(0,0,0,0.05); /* Hiệu ứng nền nhẹ khi hover */
+}
+
+/* Tinh chỉnh menu dropdown cho đẹp */
+.dropdown-menu {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px !important; /* Đẩy menu xuống một chút */
+}
+
+.dropdown-item {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f4f9;
+    color: #2e7d32; /* Màu xanh chủ đạo khi hover */
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+}
+
+.dropdown-item.logout-btn {
+   color: #dc3545; /* Màu chữ đỏ */
+   font-weight: 600;
+   transition: all 0.2s ease; /* Hiệu ứng chuyển màu mượt */
+   display: flex;
+   align-items: center;
+   gap: 8px; /* Khoảng cách giữa icon và chữ */
+}
+
+/* Khi di chuột vào: Nền đỏ nhạt */
+.dropdown-item.logout-btn:hover {
+    background-color: #fee2e2; 
+    color: #b91c1c;
+    padding-left: 20px; /* Hiệu ứng đẩy chữ sang phải một chút */
+}
+
+/* Khi đang nhấn chuột xuống (Active): Nền đỏ đậm, chữ trắng */
+.dropdown-item.logout-btn:active {
+    background-color: #dc3545;
+    color: white !important; /* Chữ chuyển sang trắng */
+}
+
+.dropdown-item.info-btn {
+   color: #006a4e; /* Màu chữ đỏ */
+   font-weight: 600;
+   transition: all 0.2s ease; /* Hiệu ứng chuyển màu mượt */
+   display: flex;
+   align-items: center;
+   gap: 8px; /* Khoảng cách giữa icon và chữ */
+}
+
+/* Khi di chuột vào: Nền đỏ nhạt */
+.dropdown-item.info-btn:hover {
+    background-color: #e1ffe3; 
+    color: #006a4e;
+    padding-left: 20px; /* Hiệu ứng đẩy chữ sang phải một chút */
+}
+
+/* Khi đang nhấn chuột xuống (Active): Nền đỏ đậm, chữ trắng */
+.dropdown-item.info-btn:active {
+    background-color: #006a4e;
+    color: white !important; /* Chữ chuyển sang trắng */
+}
